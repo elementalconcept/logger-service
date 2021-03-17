@@ -1,15 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 
 import { LogPrinterService } from '../log-printer/log-printer.service';
 
 import { LogLevel } from '../../models/log-level';
 import { BoundLogger } from '../../models/bound-logger';
+import { MIN_LOG_LEVEL } from '../../models/min-log-level';
 
 @Injectable({ providedIn: 'root' })
 export class LoggerService {
-  private readonly minLogLevel: LogLevel = LogLevel.debug;
-
-  constructor(private readonly printer: LogPrinterService) {
+  constructor(private readonly printer: LogPrinterService,
+              @Inject(MIN_LOG_LEVEL) private readonly minLogLevel: LogLevel) {
   }
 
   log = (level: LogLevel, tag: string, message: string) =>
