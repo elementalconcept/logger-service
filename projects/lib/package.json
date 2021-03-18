@@ -10,8 +10,9 @@
     "url": "git+https://github.com/elementalconcept/logger-service.git"
   },
   "peerDependencies": {
-    "@angular/common": "^11.2.5",
-    "@angular/core": "^11.2.5"
+    "@angular/common": "^11",
+    "@angular/core": "^11",
+    "nanoid": "^3"
   },
   "dependencies": {
     "tslib": "^2.0.0"
